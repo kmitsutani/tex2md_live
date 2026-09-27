@@ -1,0 +1,16 @@
+{
+  "//": "Type checking only. Nothing is emitted: the browser runs the .js files directly.",
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "allowJs": true,
+    "checkJs": true,
+    "noEmit": true,
+    "strict": false,
+    "skipLibCheck": true
+  },
+  "//include": "Browser code only. tests/ and scripts/ are Node-only and would need @types/node; they are covered by `npm test`.",
+  "include": ["public/js/**/*.js"]
+}

@@ -1,0 +1,197 @@
+%***********************************************************************
+%                                             org-created: Jan. 1, 2020
+%
+%                  ダミー研究室　令和 X 年度 年次報告書
+%                            (サンプル版)
+%
+%***********************************************************************
+%
+% このファイルはテスト用の架空の文書です。実在の人物・組織とは関係ありません。
+% 書式は日本語の大学年次報告書によくある体裁を模しています。
+%
+\documentclass[a4j,11pt]{jarticle}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{bm}
+\usepackage{slashed}
+\usepackage[dvips]{graphics}
+\usepackage{graphicx}
+%\usepackage{cite}
+%\pagecolor{black}
+\numberwithin{equation}{section}
+
+\pagestyle{empty}
+
+\setlength{\textheight}{24.0cm}
+\setlength{\textwidth}{16.5cm}
+
+\newcommand{\PTP}{Prog. Theor. Phys.\ }
+\newcommand{\JPSJ}{J. Phys. Soc. Jpn.\ }
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\pd}[2]{\frac{\partial #1}{\partial #2}}
+\DeclareMathOperator{\tr}{tr}
+
+%%%%%%%%%%
+
+\begin{document}
+\l
+\Large\bf
+\boldmath
+
+%%%%%%%%%
+\thispagestyle{empty}
+\vspace*{-15mm}
+%----------
+%\baselineskip 1pt
+%\begin{flushright}
+%\begin{tabular}{l}
+
+\vspace{15mm}
+
+\begin{center}
+{\scalebox{1.48}{\bf
+ダミー理論の基礎と応用（サンプル版）}}
+
+\baselineskip 18pt
+\vspace{7mm}
+
+{\bf 名無しの権兵衛（サンプル大学）, 名無野 三郎（ダミー研究所）, 何野 某（架空大学）}
+
+\vspace{5mm}
+
+\end{center}
+%%%%%%%%%%%%%%%%
+\vspace{10mm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%                              %%%%%
+%%%%%          Abstract            %%%%%
+%%%%%                              %%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{center}
+\begin{minipage}{14cm}
+\baselineskip 16pt
+\noindent
+%%%%%---------------------------------
+\begin{abstract}
+\Large\bf
+\boldmath
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. 本稿はダミーテキストであり、
+内容に意味はない。数式 $\alpha_s$ や $\bm{v}$ の扱いを確認するためのものである。
+
+\end{abstract}
+\end{minipage}
+\end{center}
+
+\vspace{0.5cm}
+
+\section{序論}
+
+Ut enim ad minim veniam, quis nostrud exercitation ullamco \cite{Dummy-1}.
+本節はダミーである。詳細は \cite{Dummy-2} および \cite{Missing-Key} を参照。
+% ここは後で書き直す。要確認。
+以下の記号を用いる: $\R$ は実数全体、$\tr A$ は跡、$\pd{f}{x}$ は偏微分である。
+
+\subsection{記法について}
+Duis aute irure dolor in reprehenderit \emph{in voluptate} velit esse.
+\underline{下線部はハイライトになる}。{\bf 太字の範囲}もここで確認する。
+なお 90\% は文字としての百分率である。  % 行末コメント（本文と同じ行）
+
+\section{定式化}
+Excepteur sint occaecat cupidatat non proident\footnote{脚注の中にも数式を置く:
+$\int_0^1 x^2\,dx = \frac{1}{3}$。ダミーの補足である。}。
+基本となる関係は次式で与えられる。
+\begin{align}
+&\mathcal{L} = \bar{q}\left(i\slashed{\partial} - m\right)q \nonumber \\
+&\qquad + \frac{1}{2}\bm{E}^2 - \frac{1}{4}F_{\mu\nu}F^{\mu\nu}. \label{eq:main}
+\end{align}
+ここで $F_{\mu\nu}$ はダミーの場の強さである。式 (\ref{eq:main}) を用いると、
+
+\begin{align}
+\pd{\mathcal{L}}{q} = 0
+\end{align}
+が従う。
+
+\subsection{補助的な結果}
+\begin{theorem}[ダミーの定理]
+Sed ut perspiciatis unde omnis iste natus error である。
+\end{theorem}
+
+\begin{itemize}
+\item Lorem ipsum のひとつめ
+\item ふたつめ。入れ子も確認する。
+  \begin{enumerate}
+  \item 内側のひとつめ
+  \item 内側のふたつめ
+  \end{enumerate}
+\end{itemize}
+
+\begin{description}
+\item[記号 A] ダミーの説明その一
+\item[記号 B] ダミーの説明その二
+\end{description}
+
+\section{数値例}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{lrr}
+\hline
+条件 & 値 & 誤差 \\
+\hline
+ケース 1 & 1.00 & 0.01 \\
+ケース 2 & 2.50 & 0.02 \\
+\hline
+\end{tabular}
+\caption{ダミーの数値例}
+\label{tab:dummy}
+\end{table}
+
+表 (\ref{tab:dummy}) に示す。図は以下のとおり。
+
+%{\begin{figure}[h]
+%\centering
+%\includegraphics[width=100mm,clip]{Fig_dummy.eps}
+%\caption{コメントアウトされた図。}
+%\label{fig:commented}
+%\end{figure}}
+%%%%%%%%%%
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=80mm]{fig_sample.eps}
+\caption{ダミーの図。}
+\label{fig:sample}
+\end{figure}
+
+コードをそのまま示す場合は次のようにする。
+
+\begin{verbatim}
+% verbatim の中の % はコメントではない
+\section{これは見出しにならない}
+\end{verbatim}
+
+\section{まとめ}
+At vero eos et accusamus et iusto odio dignissimos ducimus. \\
+(1) ダミーのひとつめ。 \\
+(2) ダミーのふたつめ。
+
+\begin{thebibliography}{99}
+
+\bibitem{Dummy-1}
+名無しの権兵衛, \JPSJ {\bf 99} (2020) 012345.
+
+\bibitem{Dummy-2}
+名無野 三郎 and 何野 某, \PTP {\bf 100} (2021) 067890;\\
+同上, {\it ダミー論文集 }, (架空出版, 2022) p.~1.
+
+\bibitem{Dummy-3}
+何野 某, ``ダミーの表題'', arXiv:0000.00000 (2023).
+
+\end{thebibliography}
+
+%%%%%%%%%%%%%%%
+%%%%%%%%%%%%
+
+\end{document}

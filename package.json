@@ -1,0 +1,21 @@
+{
+  "name": "tex2md_live",
+  "version": "0.1.0",
+  "description": "Drag-and-drop LaTeX to Obsidian-flavoured Markdown converter. Runs entirely in the browser.",
+  "type": "module",
+  "scripts": {
+    "test": "node --test \"tests/*.test.js\"",
+    "typecheck": "npx --yes typescript@5 tsc --noEmit",
+    "serve": "python3 -m http.server 8099 --directory public",
+    "golden": "node scripts/golden.js"
+  },
+  "license": "MIT",
+  "keywords": [
+    "latex",
+    "markdown",
+    "obsidian",
+    "converter",
+    "tex",
+    "mathjax"
+  ]
+}

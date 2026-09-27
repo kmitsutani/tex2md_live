@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>tex2md_live — LaTeX を Obsidian Markdown に</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="bar">
+  <div class="brand">
+    <strong>tex2md_live</strong>
+    <span class="tagline">LaTeX 草稿 → Obsidian 用 Markdown</span>
+  </div>
+
+  <div class="controls">
+    <label>
+      コメント
+      <select id="opt-comments">
+        <option value="classified" selected>分類して整形</option>
+        <option value="notes">散文メモのみ</option>
+        <option value="all">全部そのまま</option>
+        <option value="none">出力しない</option>
+      </select>
+    </label>
+    <label class="check">
+      <input type="checkbox" id="opt-emphasis" checked>
+      強調を残す
+    </label>
+    <label class="check">
+      <input type="checkbox" id="opt-frontmatter" checked>
+      frontmatter
+    </label>
+    <button type="button" id="pick">ファイルを選ぶ</button>
+    <input type="file" id="file" accept=".tex,.latex,text/plain" hidden>
+  </div>
+</header>
+
+<div id="notice" class="notice" hidden>
+  <span id="notice-text"></span>
+  <span class="notice-actions">
+    <button type="button" id="notice-ok">再変換して編集を破棄</button>
+    <button type="button" id="notice-cancel">編集を保持</button>
+  </span>
+</div>
+
+<main class="panes">
+  <section class="pane">
+    <div class="pane-head">
+      <h2>元の TeX</h2>
+      <span class="meta" id="source-meta">未読み込み</span>
+    </div>
+    <div class="pane-body" id="tex-pane">
+      <div class="empty">
+        <p class="big">.tex ファイルをここにドロップ</p>
+        <p>変換はすべてブラウザ内で行われます。ファイルはサーバに送信されません。</p>
+        <p class="hint">TeX ソースを貼り付け（Ctrl+V）することもできます。</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="pane">
+    <div class="pane-head">
+      <h2>Markdown<span class="editable-badge">編集できます</span></h2>
+      <div class="actions">
+        <span class="copy-status" id="copy-status" role="status" aria-live="polite"></span>
+        <button type="button" id="copy" disabled>クリップボードにコピー</button>
+        <button type="button" id="download" disabled>.md 保存</button>
+      </div>
+    </div>
+    <textarea id="md-out" class="pane-body" spellcheck="false" autocomplete="off"
+      placeholder="変換結果がここに出ます。そのまま編集してからコピーできます。"></textarea>
+  </section>
+</main>
+
+<details id="diag" class="diag" hidden>
+  <summary>変換レポート <span id="diag-badge" class="badge"></span></summary>
+  <div id="diag-body"></div>
+</details>
+
+<div id="dropzone" class="dropzone" hidden>
+  <div class="dropzone-inner">.tex を放してください</div>
+</div>
+
+<script type="module" src="js/main.js"></script>
+</body>
+</html>
