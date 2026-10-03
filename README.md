@@ -21,6 +21,20 @@ LaTeX の原稿をドラッグ＆ドロップすると、Obsidian に貼れる M
 
 ## 使い方
 
+### 1. Windows デスクトップアプリとして使う
+
+```bash
+npm install
+npm start          # デスクトップアプリが起動します
+```
+
+単一のポータブル実行ファイル（`.exe`）をビルドする場合：
+```bash
+npm run build:exe  # dist/ に tex2md_live-<version>-windows-portable.exe が生成されます
+```
+
+### 2. ウェブサーバで配信してブラウザで使う
+
 `public/` を任意の静的ウェブサーバで配信するだけ。
 
 ```bash

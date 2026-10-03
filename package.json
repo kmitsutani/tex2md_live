@@ -3,11 +3,33 @@
   "version": "0.1.0",
   "description": "Drag-and-drop LaTeX to Obsidian-flavoured Markdown converter. Runs entirely in the browser.",
   "type": "module",
+  "main": "electron/main.js",
   "scripts": {
+    "start": "electron .",
+    "app": "electron .",
+    "pack": "electron-builder --dir",
+    "build:exe": "electron-builder --win portable",
     "test": "node --test \"tests/*.test.js\"",
     "typecheck": "npx --yes typescript@5 tsc --noEmit",
     "serve": "python3 -m http.server 8099 --directory public",
     "golden": "node scripts/golden.js"
+  },
+  "build": {
+    "appId": "com.kmitsutani.tex2md-live",
+    "productName": "tex2md_live",
+    "files": [
+      "electron/**/*",
+      "public/**/*",
+      "package.json"
+    ],
+    "win": {
+      "target": [
+        "portable"
+      ]
+    },
+    "portable": {
+      "artifactName": "${productName}-${version}-windows-portable.exe"
+    }
   },
   "license": "MIT",
   "keywords": [
@@ -17,5 +39,9 @@
     "converter",
     "tex",
     "mathjax"
-  ]
+  ],
+  "devDependencies": {
+    "electron": "^44.5.1",
+    "electron-builder": "^26.15.3"
+  }
 }
